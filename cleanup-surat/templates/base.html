@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{% block title %}Cleanup Surat{% endblock %} | Together for a Cleaner, Greener Surat</title>
 <meta name="description" content="{% block desc %}Cleanup Surat is a citizen-led initiative: volunteer, adopt public spaces and report waste hotspots to build a cleaner Surat.{% endblock %}">
-<meta property="og:title" content="Cleanup Surat"><meta property="og:description" content="Together for a Cleaner, Greener Surat"><meta property="og:type" content="website"><meta property="og:image" content="/static/images/og.jpg"><meta name="theme-color" content="#2E7D32">
+<meta property="og:title" content="Cleanup Surat"><meta property="og:description" content="Together for a Cleaner, Greener Surat"><meta property="og:type" content="website"><meta property="og:image" content="/static/images/og.jpg"><meta name="theme-color" content="#0A3D1F">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lilita+One&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
@@ -10,8 +10,8 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"CleanUp Surat","logo":"/static/images/logo.jpg","description":"Together for a Cleaner, Greener Surat","areaServed":"Surat, Gujarat, India"}</script>
 <script>document.documentElement.dataset.theme=localStorage.getItem('theme')||'light'</script></head>
 <body>{% import '_m.html' as m %}
-<div id="loader" aria-hidden="true"><img src="/static/images/logo.jpg" alt="" width="160" height="160"></div>
-<a class="logo" href="/"><img src="/static/images/logo-nav.png" alt="" width="46" height="46"><span>CleanUp <b>Surat</b></span></a>
+<div id="loader" aria-hidden="true"><img src="/static/images/logo.jpg" alt="" width="160" height="160"></div><a class="skip" href="#main">Skip to content</a>
+<header id="nav"><div class="wrap bar"><a class="logo" href="/"><img src="/static/images/logo-nav.png" alt="" width="46" height="46"><span>CleanUp <b>Surat</b></span></a>
 <button id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
 <nav id="menu" aria-label="Main">{% for u,l in [('/','Home'),('/about','About'),('/events','Events'),('/volunteer','Volunteer'),('/adopt-a-spot','Adopt a Spot'),('/join-organization','Join Organization'),('/gallery','Gallery'),('/report-a-spot','Report a Spot'),('/contact','Contact')] %}<a href="{{u}}" {% if page==(u.strip('/') or 'index') %}aria-current="page"{% endif %}>{{l}}</a>{% endfor %}
 <button id="theme" aria-label="Toggle dark mode">🌓</button></nav></div></header>
