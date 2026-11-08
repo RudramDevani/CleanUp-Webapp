@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}Adopt a Spot{% endblock %}{% block content %}
+<section class="ph"><h1>Adopt a Spot</h1><p>Take responsibility for a public place and keep it clean, green and cared for.</p></section>
+<section class="wrap"><div class="grid4">{% for i,l in [('🌳','Parks'),('🛣️','Roads'),('💧','Lakes'),('🌸','Gardens'),('🏛️','Public Areas')] %}<div class="card reveal"><div class="av">{{i}}</div><b>{{l}}</b></div>{% endfor %}</div></section>
+<section class="wrap narrow"><h2>Apply</h2>{% call m.form('adoptions','Submit Application') %}{{m.f('name','Name')}}{{m.f('organization','Organization',r=false)}}{{m.f('phone','Phone','tel')}}{{m.f('email','Email','email')}}{{m.s('spot','Preferred Spot',['Park','Road','Lake','Garden','Public Area'])}}{{m.t('reason','Reason',true)}}{% endcall %}</section>{% endblock %}

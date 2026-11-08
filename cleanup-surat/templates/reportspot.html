@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% block title %}Report a Spot{% endblock %}{% block content %}
+<section class="ph"><h1>Report a Waste Spot</h1></section><section class="wrap narrow">
+{% call m.form('reports','Submit Report') %}{{m.f('name','Name')}}{{m.f('phone','Phone','tel')}}{{m.f('email','Email','email',false)}}{{m.f('area','Area')}}
+{{m.s('waste_type','Waste Category',['Plastic','Garbage','Construction Waste','Water Pollution','Other'])}}{{m.s('urgency','Urgency',['Low','Medium','High'])}}
+<label class="full">Location (address or lat,lng) *<input name="location" id="loc" required></label>
+<div class="full"><button type="button" class="btn alt" id="geo">📍 Use my location</button><iframe id="map" title="Map preview" loading="lazy" src="https://maps.google.com/maps?q=Surat,Gujarat&output=embed"></iframe></div>
+<div class="full">{{m.t('description','Description',true)}}</div>
+<label class="full">Photos (up to 5)<input type="file" name="images" accept="image/*" multiple></label>{% endcall %}</section>{% endblock %}

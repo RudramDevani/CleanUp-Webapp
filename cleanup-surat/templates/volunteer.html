@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block title %}Volunteer{% endblock %}{% block content %}
+<section class="ph"><h1>Become a Volunteer</h1></section><section class="wrap narrow">
+{% call m.form('volunteers','Join as Volunteer') %}{{m.f('name','Full Name')}}{{m.f('email','Email','email')}}{{m.f('phone','Phone','tel')}}{{m.f('city','City')}}{{m.f('area','Area')}}{{m.f('age','Age','number')}}{{m.f('occupation','Occupation',r=false)}}{{m.f('skills','Skills',r=false)}}{{m.s('availability','Availability',['Weekdays','Weekends','Both','Occasionally'])}}{{m.t('message','Message')}}{% endcall %}</section>{% endblock %}

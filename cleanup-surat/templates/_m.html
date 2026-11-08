@@ -1,0 +1,4 @@
+{% macro f(n,l,t='text',r=true) %}<label>{{l}}{% if r %} *{% endif %}<input name="{{n}}" type="{{t}}" {{'required' if r}}></label>{% endmacro %}
+{% macro s(n,l,o,r=true) %}<label>{{l}}{% if r %} *{% endif %}<select name="{{n}}" {{'required' if r}}><option value="">Select…</option>{% for x in o %}<option>{{x}}</option>{% endfor %}</select></label>{% endmacro %}
+{% macro t(n,l,r=false) %}<label>{{l}}{% if r %} *{% endif %}<textarea name="{{n}}" rows="4" {{'required' if r}}></textarea></label>{% endmacro %}
+{% macro form(table,btn='Submit') %}<form class="card form" data-table="{{table}}"><div class="grid2">{{caller()}}</div><input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><button class="btn" type="submit">{{btn}}</button></form>{% endmacro %}

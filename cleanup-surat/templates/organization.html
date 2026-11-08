@@ -1,0 +1,3 @@
+{% extends 'base.html' %}{% block title %}Join Organization{% endblock %}{% block content %}
+<section class="ph"><h1>Partner With Us</h1><p>NGOs, schools, colleges, housing societies and companies.</p></section><section class="wrap narrow">
+{% call m.form('organizations','Register Organization') %}{{m.f('organization_name','Organization Name')}}{{m.f('contact_person','Contact Person')}}{{m.f('email','Email','email')}}{{m.f('phone','Phone','tel')}}{{m.f('address','Address')}}{{m.s('organization_type','Type',['NGO','School','College','Housing Society','Company'])}}{{m.f('website','Website','url',false)}}{{m.t('message','Message')}}{% endcall %}</section>{% endblock %}

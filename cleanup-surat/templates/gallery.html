@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block title %}Gallery{% endblock %}{% block content %}
+<section class="ph"><h1>Gallery</h1></section><section class="wrap">
+<div class="tabs">{% for c,l in [('events','Events'),('before','Before Cleanup'),('after','After Cleanup'),('volunteers','Volunteers')] %}<button class="chip {{'on' if c=='events'}}" data-tab="{{c}}">{{l}}</button>{% endfor %}</div>
+<div class="masonry" data-gallery data-cat="events"></div></section>
+<dialog id="lb"><img alt="Enlarged photo"></dialog>{% endblock %}
