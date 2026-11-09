@@ -13,7 +13,7 @@
 <div id="loader" aria-hidden="true"><img src="/static/images/logo.jpg" alt="" width="160" height="160"></div><a class="skip" href="#main">Skip to content</a>
 <header id="nav"><div class="wrap bar"><a class="logo" href="/"><img src="/static/images/logo-nav.png" alt="" width="46" height="46"><span>CleanUp <b>Surat</b></span></a>
 <button id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
-<nav id="menu" aria-label="Main">{% for u,l in [('/','Home'),('/about','About'),('/events','Events'),('/volunteer','Volunteer'),('/adopt-a-spot','Adopt a Spot'),('/join-organization','Join Organization'),('/gallery','Gallery'),('/report-a-spot','Report a Spot'),('/contact','Contact')] %}<a href="{{u}}" {% if page==(u.strip('/') or 'index') %}aria-current="page"{% endif %}>{{l}}</a>{% endfor %}
+<nav id="menu" aria-label="Main">{% for u,l in [('/','Home'),('/about','About'),('/events','Events'),('/volunteer','Volunteer'),('/adopt-an-item','Adopt an Item'),('/join-organization','Join Organization'),('/gallery','Gallery'),('/report-a-spot','Report a Spot'),('/contact','Contact')] %}<a href="{{u}}" {% if page==(u.strip('/') or 'index') %}aria-current="page"{% endif %}>{{l}}</a>{% endfor %}
 <button id="theme" aria-label="Toggle dark mode">🌓</button></nav></div></header>
 <main id="main">{% block content %}{% endblock %}</main>
 <footer><div class="wrap fgrid"><div><img class="flogo" src="/static/images/logo-nav.png" alt="Cleanup Surat logo" width="120" height="120" loading="lazy"><h3>CleanUp Surat</h3><p>A citizen-led movement making Surat cleaner and greener through volunteering, public-space adoption and community reporting.</p></div>
