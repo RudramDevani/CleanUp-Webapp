@@ -26,7 +26,7 @@ $$('form[data-table]').forEach(f=>f.addEventListener('submit',async e=>{
    const p=`${Date.now()}-${Math.random().toString(36).slice(2)}-${x.name.replace(/[^\w.]/g,'_')}`;
    const {error}=await sb.storage.from('reports').upload(p,x);if(error)throw error;urls.push(sb.storage.from('reports').getPublicUrl(p).data.publicUrl)}d.image_url=urls.join(',')}
   const {error}=await sb.from(f.dataset.table).insert(d);if(error)throw error;
-  localStorage.setItem('last',Date.now());f.reset();toast('Thank you! Submitted successfully.');
+  localStorage.setItem('last',Date.now());f.reset();toast('Thank you! Submitted successfully.');f.dispatchEvent(new Event('saved'));
  }catch(err){toast(err.message||'Something went wrong. Try again.',false)}
  btn.disabled=false}));
 // events
