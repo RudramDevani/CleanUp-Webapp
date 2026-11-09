@@ -1,7 +1,42 @@
 {% extends 'base.html' %}{% block title %}About{% endblock %}{% block content %}
-<section class="ph"><h1>About Cleanup Surat</h1></section>
-<section class="wrap grid2">{% for t,d in [('Our Mission','Mobilise citizens to keep Surat clean through action, awareness and accountability.'),('Our Vision','A Surat where every street, lake and garden is cared for by the people who use it.'),('Our Story','Born from a few weekend cleanups, Cleanup Surat grew into a city-wide network of volunteers and partners.')] %}<div class="card reveal"><h2>{{t}}</h2><p>{{d}}</p></div>{% endfor %}</section>
-<section class="wrap"><h2>How It Works</h2><div class="grid4">{% for i,t in [('1','Sign up as volunteer'),('2','Join or host a cleanup'),('3','Report a spot'),('4','Track the impact')] %}<div class="card reveal"><b class="step">{{i}}</b><p>{{t}}</p></div>{% endfor %}</div></section>
-<section class="wrap"><h2>Core Values</h2><div class="grid4">{% for v in ['Community','Transparency','Sustainability','Inclusivity'] %}<div class="card">{{v}}</div>{% endfor %}</div></section>
-<section class="wrap"><h2>Timeline</h2><ul class="tl">{% for y,t in [('14th September, 2025','First cleanup drive'),('5th November, 2026','First Collection'),('7th November, 2026','First Exhibition')] %}<li><b>{{y}}</b> {{t}}</li>{% endfor %}</ul></section>
+<section class="ph"><h1>About CleanUp Surat</h1><p>Together for a Cleaner, Greener Surat</p></section>
+
+<section class="wrap about-intro">
+<div class="reveal"><span class="tag">Who We Are</span><h2>A city-wide movement, led by citizens</h2>
+<p>CleanUp Surat brings together volunteers, schools, housing societies and companies who believe a clean city is built by the people who live in it.</p>
+<p>From weekend cleanup drives to adopting public spaces and reporting waste hotspots, we turn small actions into lasting change across Surat.</p>
+<a class="btn" href="/volunteer">Join the Movement</a></div>
+<div class="reveal about-img"><img src="/static/images/logo.jpg" alt="CleanUp Surat logo" width="420" height="420"></div>
+</section>
+
+<section class="wrap grid2 mv">
+<div class="card reveal"><span class="ico">🎯</span><h3>Our Mission</h3><p>Mobilise citizens to keep Surat clean through action, awareness and accountability.</p></div>
+<div class="card reveal"><span class="ico">🌅</span><h3>Our Vision</h3><p>A Surat where every street, lake and garden is cared for by the people who use it.</p></div>
+</section>
+
+<section class="wrap"><h2>The Story Behind Our Logo</h2><div class="grid3">
+{% for i,t,d in [('🦁','The Lion','Courage and pride. Surat stands tall and protects what it loves.'),('⛰️','The Mountain','Nature we promise to keep green and clean for the next generation.'),('🤝','The Volunteers','Ordinary people, working together, make the biggest difference.')] %}
+<div class="card reveal"><span class="ico">{{i}}</span><h3>{{t}}</h3><p>{{d}}</p></div>{% endfor %}</div></section>
+
+<section class="wrap"><div class="band">
+{% for n,l in [(1500,'Volunteers'),(340,'Partner Organizations'),(60,'Drives Conducted'),(125,'Tonnes of Waste Collected')] %}
+<div class="reveal"><b data-count="{{n}}">0</b><span>{{l}}</span></div>{% endfor %}</div></section>
+
+<section class="wrap"><h2>How It Works</h2><div class="grid4">
+{% for i,t,d in [('1','Sign Up','Register as a volunteer in two minutes.'),('2','Join a Drive','Attend a cleanup or host one in your area.'),('3','Adopt or Report','Adopt a public spot or report a waste hotspot.'),('4','See the Impact','Track what we achieve together.')] %}
+<div class="card reveal"><b class="step">{{i}}</b><h3>{{t}}</h3><p>{{d}}</p></div>{% endfor %}</div></section>
+
+<section class="wrap"><h2>Our Core Values</h2><div class="grid4">
+{% for i,v,d in [('🤝','Community','Everyone has a role to play.'),('🔍','Transparency','Open about what we do and achieve.'),('🌱','Sustainability','Solutions that last beyond one day.'),('🌍','Inclusivity','Open to every age and background.')] %}
+<div class="card reveal"><span class="ico">{{i}}</span><h3>{{v}}</h3><p>{{d}}</p></div>{% endfor %}</div></section>
+
+<section class="wrap team"><h2>Meet the Team</h2><div class="grid4">
+{% for n in ['Founder','Program Lead','Outreach Lead','Volunteer Lead'] %}
+<div class="card reveal"><div class="av big">👤</div><h3>Name Surname</h3><span>{{n}}</span></div>{% endfor %}</div></section>
+
+<section class="wrap"><h2>Our Journey</h2><ul class="tl">
+{% for y,t in [('2023','Our first cleanup drive brought neighbours together.'),('2024','We launched our partner network of schools and societies.'),('2025','The Adopt-a-Spot programme began.'),('2026','Our online reporting platform went live.')] %}
+<li class="reveal"><b>{{y}}</b>{{t}}</li>{% endfor %}</ul></section>
+
+<section class="wrap"><div class="cta reveal"><h2>Be Part of the Change</h2><p>Your time, your area, your city. Start with one cleanup.</p><a class="btn" href="/volunteer">Become Volunteer</a> <a class="btn alt" href="/contact">Contact Us</a></div></section>
 {% endblock %}
