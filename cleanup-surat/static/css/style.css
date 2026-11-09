@@ -85,3 +85,19 @@ body>footer{background:var(--gd);color:#dfeee2;margin-top:4rem;padding:3rem 0 1r
 .cta{text-align:center;color:#fff;border-radius:28px;padding:3rem 1.2rem;margin:3rem auto;background:linear-gradient(rgba(1,50,25,.85),rgba(10,61,31,.92)),url(../images/hero.jpg) center/cover,var(--gd)}
 .cta h2{color:#fff;margin-top:0}.
 
+/* ===== Adopt an Item ===== */
+.item{display:flex;flex-direction:column;padding:1rem}
+.item p{flex:1;margin:.3rem 0 1rem}
+.item small{color:var(--brown);font-weight:600}
+.imgbox{position:relative;overflow:hidden;border-radius:14px;margin-bottom:.8rem}
+.item img{width:100%;height:220px;object-fit:cover;display:block;background:var(--g3);transition:transform .5s}
+.item:hover img{transform:scale(1.06)}
+.badge{position:absolute;top:10px;left:10px;background:var(--brown);color:#fff;padding:.2rem .8rem;border-radius:99px;font-size:.8rem;font-weight:600}
+.badge.ok{background:var(--g)}
+.item.gone img{filter:grayscale(.9)}
+.btn:disabled{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none}
+.formdlg{width:min(92vw,560px);max-height:92vh;overflow:auto}
+.formdlg .card:hover{transform:none;box-shadow:0 6px 20px rgba(10,61,31,.1)}
+.formdlg .card::after{display:none}
+.formdlg .x{position:absolute;top:10px;right:14px;background:none;border:0;font-size:1.4rem;cursor:pointer;color:var(--t)}
+
