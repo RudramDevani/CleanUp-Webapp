@@ -46,3 +46,22 @@ const lb=$('#lb');if(lb)lb.onclick=()=>lb.close();
 // report: geolocation + map preview
 const loc=$('#loc');if(loc){const m=()=>$('#map').src='https://maps.google.com/maps?q='+encodeURIComponent(loc.value)+'&output=embed';loc.onchange=m;
  $('#geo').onclick=()=>navigator.geolocation?navigator.geolocation.getCurrentPosition(p=>{loc.value=p.coords.latitude.toFixed(6)+','+p.coords.longitude.toFixed(6);m()},()=>toast('Location access denied.',false)):toast('Geolocation unsupported.',false)}
+
+// adopt an item
+const ib=$('[data-items]');
+if(ib&&sb){
+ const dlg=$('#adoptDlg'),af=$('#adoptForm');
+ const load=async()=>{
+  const {data,error}=await sb.from('items').select('*').order('created_at',{ascending:false});
+  if(error){ib.innerHTML='<p>Could not load items. Please try again later.</p>';return}
+  ib.innerHTML=(data||[]).map(x=>{const ok=x.status==='available';return`<article class="card item${ok?'':' gone'}">
+  <div class="imgbox"><img loading="lazy" src="${esc(x.image_url)}" alt="${esc(x.name)}"><span class="badge${ok?' ok':''}">${ok?esc(x.condition):'Adopted'}</span></div>
+  <h3>${esc(x.name)}</h3><small>${esc(x.category)} · ${esc(x.found_at)}</small><p>${esc(x.description)}</p>
+  ${ok?`<button class="btn" data-id="${esc(x.id)}" data-name="${esc(x.name)}">Adopt this item</button>`:'<button class="btn" disabled>Already adopted</button>'}</article>`}).join('')||'<p>No items listed right now. Check back after our next drive!</p>'};
+ load();
+ ib.onclick=e=>{const b=e.target.closest('button[data-id]');if(!b)return;
+  af.item_id.value=b.dataset.id;af.item_name.value=b.dataset.name;
+  $('#adoptTitle').textContent='Adopt: '+b.dataset.name;dlg.showModal()};
+ $('#adoptClose').onclick=()=>dlg.close();
+ af.addEventListener('saved',()=>{dlg.close();load()});
+}
