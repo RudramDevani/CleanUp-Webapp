@@ -1,4 +1,21 @@
-{% extends 'base.html' %}{% block title %}Adopt a Spot{% endblock %}{% block content %}
-<section class="ph"><h1>Adopt a Spot</h1><p>Take responsibility for a public place and keep it clean, green and cared for.</p></section>
-<section class="wrap"><div class="grid4">{% for i,l in [('🌳','Parks'),('🛣️','Roads'),('💧','Lakes'),('🌸','Gardens'),('🏛️','Public Areas')] %}<div class="card reveal"><div class="av">{{i}}</div><b>{{l}}</b></div>{% endfor %}</div></section>
-<section class="wrap narrow"><h2>Apply</h2>{% call m.form('adoptions','Submit Application') %}{{m.f('name','Name')}}{{m.f('organization','Organization',r=false)}}{{m.f('phone','Phone','tel')}}{{m.f('email','Email','email')}}{{m.s('spot','Preferred Spot',['Park','Road','Lake','Garden','Public Area'])}}{{m.t('reason','Reason',true)}}{% endcall %}</section>{% endblock %}
+{% extends 'base.html' %}{% block title %}Adopt an Item{% endblock %}
+{% block desc %}Give a second life to items found during CleanUp Surat drives that are still in good condition.{% endblock %}
+{% block content %}
+<section class="ph"><h1>Adopt an Item</h1><p>Give a second life to things found in our cleanup drives</p></section>
+
+<section class="wrap"><div class="grid3">
+{% for i,t,d in [('🔍','Browse','See items we found during drives that are still in good condition.'),('🤝','Adopt','Click "Adopt this item" and tell us a little about yourself.'),('📞','We Connect','Our team contacts you to confirm and arrange handover.')] %}
+<div class="card reveal"><span class="ico">{{i}}</span><h3>{{t}}</h3><p>{{d}}</p></div>{% endfor %}</div></section>
+
+<section class="wrap"><h2>Available Items</h2><div class="grid3" data-items><p>Loading items…</p></div></section>
+
+<dialog id="adoptDlg" class="formdlg"><div class="card">
+<button type="button" id="adoptClose" class="x" aria-label="Close">✕</button>
+<h3 id="adoptTitle">Adopt this item</h3>
+<form id="adoptForm" class="form" data-table="item_adoptions">
+<input type="hidden" name="item_id"><input type="hidden" name="item_name">
+<div class="grid2">{{m.f('name','Full Name')}}{{m.f('phone','Phone','tel')}}{{m.f('email','Email','email')}}{{m.f('city','City / Area')}}
+<div class="full">{{m.t('reason','Why do you want this item and how will you use it?',true)}}</div></div>
+<input class="hp" name="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<button class="btn" type="submit">Submit Adoption Request</button></form></div></dialog>
+{% endblock %}
